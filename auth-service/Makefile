@@ -1,17 +1,17 @@
-GOCMD=go
-GOTEST=$(GOCMD) test
-GOVET=$(GOCMD) vet
-BINARY_NAME=auth-service
-VERSION?=0.0.1
-SERVICE_PORT?=3000
-DOCKER_REGISTRY?= #if set it should finished by /
-EXPORT_RESULT?=false # for CI please set EXPORT_RESULT to true
+GOCMD			=  go
+GOTEST			=  $(GOCMD) test
+GOVET			=  $(GOCMD) vet
+BINARY_NAME		=  auth-service
+SERVICE_PORT?	=  3000
+DOCKER_REGISTRY	?= #if set it should finished by /
+EXPORT_RESULT?	=  false # for CI please set EXPORT_RESULT to true
 
-GREEN  := $(shell tput -Txterm setaf 2)
-YELLOW := $(shell tput -Txterm setaf 3)
-WHITE  := $(shell tput -Txterm setaf 7)
-CYAN   := $(shell tput -Txterm setaf 6)
-RESET  := $(shell tput -Txterm sgr0)
+VERSION	:= $(shell cat ./VERSION)
+GREEN  	:= $(shell tput -Txterm setaf 2)
+YELLOW 	:= $(shell tput -Txterm setaf 3)
+WHITE  	:= $(shell tput -Txterm setaf 7)
+CYAN   	:= $(shell tput -Txterm setaf 6)
+RESET  	:= $(shell tput -Txterm sgr0)
 
 .PHONY: all test build vendor
 
